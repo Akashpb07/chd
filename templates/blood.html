@@ -1,0 +1,263 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Chandigarh Dial - Local Services , Plumber, Electrician, Automobile etc</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/iconweb.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+  <!-- <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet"> -->
+  <link href="{% static 'assets/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-none d-lg-block">
+    <div class="container clearfix">
+      <div class="contact-info float-left">
+        <i class="fa fa-envelope-o"></i> <a href="sao.akash786@gmail.com">sao.akash786@gmail.com</a>
+        <i class="fa fa-phone"></i> <a>+91 83603 69398 </a>
+      </div>
+      <div class="social-links float-right">
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section><!-- End Top Bar-->
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="{% url 'index' %}" class="scrollto">Chandigarh<span>dial</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#topbar"><img src="assets/img/logo.png" alt=""></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#topbar">Blood Donate</a></li>
+
+
+          <li><a href="contactus">Contact</a></li>
+          <li class="menu-has-children"><a href="#services">Services </a>
+            <ul>
+              <li><a href="doctor">DOCTORS</a></li>
+              <li><a href="electrician">ELECTRICIANS</a></li>
+              <li><a href="automobiles">AUTOMOBILES</a></li>
+              <li><a href="plumbers">PLUMBERS</a></li>
+               <li><a href="hospitals">HOSPITALS</a></li>
+               <li><a href="hotels">HOTELS</a></li>
+               <li><a href="resutrants">RESTURENTS</a></li>
+               {% if user.is_authenticated %}
+              <div role="separator" class="dropdown-divider"></div>
+              <li><a href="add">Add Services Request</a></li>
+              {% endif %}
+            </ul>
+          </li>
+          <li><a href="blood">Donate blood</a></li>
+          <li><a href="#" class="linkedin"><i class="fa fa-search" aria-hidden="true"></i></a>
+          {% if user.is_authenticated %}
+
+          <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><a>Hello,{{user.first_name}}</a></button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="accounts/view_profile">Your account</a><br>
+                <a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a><br>
+                <a class="dropdown-item" href="{% url 'password_reset' %}">Forgot password</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" href="accounts/logout">Logout</a>
+              </div>
+          {% else %}
+          <li><a href="accounts/login" class="btn-get-started scrollto">LOGIN</a></li>
+          {% endif %}
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Intro Section ======= -->
+  <section id="intro">
+
+    <div class="intro-content">
+      <h2><span></span><br>Donate Blood Save Life! </h2><br>
+
+
+      <div>
+        <a href="db" class=" btn  btn-get-started ">Donate Now</a>
+
+      </div>
+    </div>
+
+    <div id="intro-carousel2" class="owl-carousel2">
+      <div class="item" style="background-image: url({% static 'assets/img/intro-carousel/cr.jpg' %});"></div>
+
+    </div>
+
+  </section>
+  <!-- End Intro Section -->
+  <div class="container mt-5  bg-light">
+       <div class="section-header">
+                    <h2>Donate  Blood</h2>
+                  </div>
+    <div class="row text-center">
+        <div class="col-sm-2">
+
+            </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <img class="card-img-top" src="{% static './assets/img/blood Donate/bd.jpg' %}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Donate Blood</h5>
+
+            <a href="db" class="btn btn-danger">Donate Blood</a>
+          </div>
+        </div>
+      </div>
+             <div class="col-sm-2">
+               <h2>Your Blood Can bring the smile in other person face
+               </h2>
+            </div>
+      <div class="col-sm-3">
+        <div class="card">
+          <img class="card-img-top" src="{% static './assets/img/blood Donate/fb.jpg' %}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">FInd Blood </h5>
+
+            <a href="fb" class="btn btn-danger">Find Blood</a>
+          </div>
+        </div>
+      </div>
+         <div class="col-sm-2">
+
+            </div>
+    </div>
+  </div>
+  <section id="blood" class="wow fadeInUp">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6 about-img">
+                  <img src="{% static 'assets/img/bloodd.png' %}" alt="">
+                </div>
+
+                <div class="col-lg-6 content">
+                  <div class="section-header">
+                    <h2>Donate  Blood</h2>
+                  </div>
+
+                  <h3>“Your blood can give a life to someone.”<br>
+                    “Your blood donation can give a precious smile to someone's face.” <br>
+                    “Don't let fools or mosquitoes suck your blood,<br>
+                     put it to good use.
+                    Donate blood and save a life.”</h3>
+
+                  <ul>
+                    <li><i class="ion-android-checkmark-circle"></i>Donate Blood</li>
+                    <li><i class="ion-android-checkmark-circle"></i>Post Blood Requset</li>
+                    <li><i class="ion-android-checkmark-circle"></i>Find Blood Easily</li>
+                  </ul>
+                  <ul>
+
+                  </ul>
+
+                </div>
+
+              </div>
+
+            </div>
+          </section>
+          </section>
+          </section>
+
+
+   <!-- ======= Call To Action Section ======= -->
+    <section id="call-to-action" class="wow fadeInUp">
+      <div class="container ">
+        <div class="row ">
+          <div class="col-lg-9 text-center text-lg-left mt-5">
+            <h3 class="cta-title">Give Blood Save Life !!</h3>
+            <p class="cta-text"></p>
+          </div>
+
+
+
+
+
+        </div>
+
+      </div>
+    </section><!-- End Call To Action Section -->
+
+
+
+ <footer class="footer-area ">
+      <div class="container">
+          <div class="">
+              <div id="logo" class="text-center pt-5">
+                  <h1><a href="#" class="scrollto">Chandigarh<span>dial</span></a></h1>
+              </div>
+              <div class="social text-center pt-3 ">
+
+
+                  <a href="https://www.facebook.com/AKASHDEEP8822/"><i class="fa fa-facebook"></i></a>
+                  <a href="https://www.instagram.com/akashpb07_/?hl=en"><i class="fa fa-instagram"></i></a>
+                  <a href="https://www.youtube.com/channel/UChURi3qyZPzzz5_287GHzFw"><i class="fa fa-youtube"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="https://github.com/Akashpb07"><i class="fa fa-github" aria-hidden="true"></i></a>
+              </div>
+              <div class="copyrights text-center">
+                  <p class="para ">
+
+                      <a href="#"> Copyright ©2020 All rights reserved <span style="color:white;">Akashdeep</span></a>
+                  </p>
+              </div>
+          </div>
+      </div>
+    </footer>
+      <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+      <!-- Vendor JS Files -->
+ <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+ <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+ <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+ <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+ <script src="{% static 'assets/vendor/wow/wow.min.js' %}"></script>
+ <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+ <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+ <script src="{% static 'assets/vendor/jquery-sticky/jquery.sticky.js' %}"></script>
+ <script src="{% static 'assets/vendor/superfish/superfish.min.js' %}"></script>
+ <script src="{% static 'assets/vendor/hoverIntent/hoverIntent.js' %}"></script>
+
+ <!-- Template Main JS File -->
+ <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+</html>

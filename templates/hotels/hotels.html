@@ -1,0 +1,237 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hotels</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Favicons -->
+    <link rel="icon" href="{% static 'assets/img/favicon.png' %}" type="image/x-icon">
+
+    <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+  <!-- <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet"> -->
+  <link href="{% static 'assets/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'assets/css/Allpage.css' %}">
+</head>
+<body>
+    <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-none d-lg-block">
+    <div class="container clearfix">
+      <div class="contact-info float-left">
+        <i class="fa fa-envelope-o"></i> <a href="sao.akash786@gmail.com">sao.akash786@gmail.com</a>
+        <i class="fa fa-phone"></i> <a>+91 83603 69398 </a>
+      </div>
+      <div class="social-links float-right">
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section><!-- End Top Bar-->
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="{% url 'index' %}" class="scrollto">Chandigarh<span>dial</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#topbar"><img src="assets/img/logo.png" alt=""></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#topbar">Hotels</a></li>
+
+
+          <li><a href="contactus">Contact</a></li>
+          <li class="menu-has-children"><a href="#services">Services </a>
+            <ul>
+              <li><a href="doctor">DOCTORS</a></li>
+              <li><a href="electrician">ELECTRICIANS</a></li>
+              <li><a href="automobiles">AUTOMOBILES</a></li>
+              <li><a href="plumbers">PLUMBERS</a></li>
+               <li><a href="hospitals">HOSPITALS</a></li>
+               <li><a href="hotels">HOTELS</a></li>
+               <li><a href="resutrants">RESTURENTS</a></li>
+               {% if user.is_authenticated %}
+              <div role="separator" class="dropdown-divider"></div>
+              <li><a href="add">Add Services Request</a></li>
+              {% endif %}
+            </ul>
+          </li>
+          <li><a href="blood">Donate blood</a></li>
+          <li><a href="#" class="linkedin"><i class="fa fa-search" aria-hidden="true"></i></a>
+          {% if user.is_authenticated %}
+
+          <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><a>Hello,{{user.first_name}}</a></button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="accounts/view_profile">Your account</a><br>
+                <a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a><br>
+                <a class="dropdown-item" href="{% url 'password_reset' %}">Forgot password</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" href="accounts/logout">Logout</a>
+              </div>
+          {% else %}
+          <li><a href="accounts/login" class="btn-get-started scrollto">LOGIN</a></li>
+          {% endif %}
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- End Header -->
+
+
+  <section>
+    <div class="container">
+        <div class="detailwarper">
+                    <div class="title "><h3>Hotels  In Chandigarh</h3></div>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index">Home</a></li>
+
+                <li class="breadcrumb-item active" aria-current="page">Hotels</li>
+              </ol>
+
+
+         <!--Doctor Card Start  -->
+         <div class="row">
+
+            <div class="col-md-12 col-lg-4 col-xl-3 theiaStickySidebar mt-2"  >
+
+               <!-- Search Filter -->
+                <div class="card search-filter mt-3">
+                    <div class="card-header">
+                        <h4 class="card-title mb-0">Populars Search</h4>
+                    </div>
+                    <div class="card-body">
+                    <div class="filter-widget">
+                        <div>
+                            <h5 class="active">Hotels</h5>
+                              <div role="separator" class="dropdown-divider"></div>
+                                <a href="h3">5 Star hotels near me </a><br>
+                             <div role="separator" class="dropdown-divider"></div>
+                            <a href="h3">Best hotels near me </a><br>
+                             <div role="separator" class="dropdown-divider"></div>
+                            <a href="h3">3 Star hotels near me </a><br>
+                             <div role="separator" class="dropdown-divider"></div>
+
+                        </div>
+                    </div>
+                        <div class="btn-search">
+                            <button type="button" class="btn btn-block">See More ></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Search Filter -->
+
+            </div>
+
+
+       <div class="col-md-12 col-lg-8 col-xl-9 mt-3">
+           {% for ps in  pss %}
+         <!-- /Doctor Widget -->
+            <div class="card">
+                <div class="card-body">
+                    <div class="doctor-widget">
+                        <div class="doc-info-left">
+                            <div class="doctor-img">
+                                <a href="{% url 'vh' pk=ps.pk %}">
+                                    <img src="{{ps.drimg.url}}" class="img-fluid" alt="User Image">
+                                </a>
+                            </div>
+                            <div class="doc-info-cont">
+                                <h4 class="doc-name"><a href="{% url 'vh' pk=ps.pk %}">{{ps.name}}</a></h4>
+                                <p class="doc-speciality">{{ps.speciality}}</p>
+                                <h5 class="doc-department"><img src="{{ps.deprtimg.url}}" class="img-fluid" alt="">{{ps.department}}</h5>
+
+                                <div class="clinic-details">
+                                    <p class="doc-location"><i class="fa fa-location-arrow" aria-hidden="true"></i> {{ps.location}}<br>
+                                        <i class="fa fa-phone" aria-hidden="true"></i>  +91 {{ps.mobNo}}</p>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="doc-info-right">
+                            <div class="clinic-booking">
+                                <a class="view-pro-btn" href="{% url 'vh' pk=ps.pk %}">View Profile</a>
+                                <a class="apt-btn" href="{% url 'vh' pk=ps.pk %}">Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <!-- /Doctor Widget -->
+
+
+
+
+        </div>
+      </div>
+    </div>
+        </div>
+  </section>
+
+<footer class="footer-area ">
+    <div class="container">
+        <div class="">
+            <div id="logo" class="text-center pt-5">
+                <h1><a href="#" class="scrollto">Chandigarh<span>dial</span></a></h1>
+            </div>
+            <div class="social text-center pt-3 ">
+
+
+                <a href="https://www.facebook.com/AKASHDEEP8822/"><i class="fa fa-facebook"></i></a>
+                <a href="https://www.instagram.com/akashpb07_/?hl=en"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UChURi3qyZPzzz5_287GHzFw"><i class="fa fa-youtube"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="https://github.com/Akashpb07"><i class="fa fa-github" aria-hidden="true"></i></a><br>
+                <a href="#"> Copyright ©2020 All rights reserved <span style="color:white;">Akashdeep</span></a>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- list end -->
+
+   <!-- Vendor JS Files -->
+   <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+   <script src="{% static 'assets/vendor/wow/wow.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/jquery-sticky/jquery.sticky.js' %}"></script>
+   <script src="{% static 'assets/vendor/superfish/superfish.min.js' %}"></script>
+   <script src="{% static 'assets/vendor/hoverIntent/hoverIntent.js' %}"></script>
+   <!-- Sticky Sidebar JS -->
+   <script src="{% static 'assets/plugins/theia-sticky-sidebar/ResizeSensor.js' %}"></script>
+   <script src="{% static 'assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js' %}"></script>
+
+   <!-- Template Main JS File -->
+   <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>

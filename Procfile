@@ -1,0 +1,1 @@
+web: gunicorn chd.wsgi --log-file

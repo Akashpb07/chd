@@ -1,0 +1,170 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Blood Donation</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}">
+
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'assets/css/table.css' %}">
+	 <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+<!--===============================================================================================-->
+	 <!-- Favicons -->
+  <link href="{% static 'assets/img/iconweb.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+  <!-- <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet"> -->
+  <link href="{% static 'assets/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+</head>
+<body>
+ <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-none d-lg-block">
+    <div class="container clearfix">
+      <div class="contact-info float-left">
+        <i class="fa fa-envelope-o"></i> <a href="sao.akash786@gmail.com">sao.akash786@gmail.com</a>
+        <i class="fa fa-phone"></i> <a>+91 83603 69398 </a>
+      </div>
+      <div class="social-links float-right">
+        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section><!-- End Top Bar-->
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="{% url 'index' %}" class="scrollto">Chandigarh<span>dial</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="#topbar"><img src="assets/img/logo.png" alt=""></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#topbar">Blood Donate</a></li>
+
+
+          <li><a href="contactus">Contact</a></li>
+          <li class="menu-has-children"><a href="#services">Services </a>
+            <ul>
+              <li><a href="doctor">DOCTORS</a></li>
+              <li><a href="electrician">ELECTRICIANS</a></li>
+              <li><a href="automobiles">AUTOMOBILES</a></li>
+              <li><a href="plumbers">PLUMBERS</a></li>
+               <li><a href="hospitals">HOSPITALS</a></li>
+               <li><a href="hotels">HOTELS</a></li>
+               <li><a href="resutrants">RESTURENTS</a></li>
+               {% if user.is_authenticated %}
+              <div role="separator" class="dropdown-divider"></div>
+              <li><a href="add">Add Services Request</a></li>
+              {% endif %}
+            </ul>
+          </li>
+          <li><a href="blood">Donate blood</a></li>
+          <li><a href="#" class="linkedin"><i class="fa fa-search" aria-hidden="true"></i></a>
+          {% if user.is_authenticated %}
+
+          <button class="btn btn-warning dropdown-toggle" type="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"><a>Hello,{{user.first_name}}</a></button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="accounts/view_profile">Your account</a><br>
+                <a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a><br>
+                <a class="dropdown-item" href="{% url 'password_reset' %}">Forgot password</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" href="accounts/logout">Logout</a>
+              </div>
+          {% else %}
+          <li><a href="accounts/login" class="btn-get-started scrollto">LOGIN</a></li>
+          {% endif %}
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- End Header -->
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<h4>Your Registeration Successfully Added  Into Blood Donation </h4>
+				<div class="table100 ver1 m-b-110 mt-5">
+					<div class="table100-head">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">name</th>
+									<th class="cell100 column2">Blood Group</th>
+									<th class="cell100 column3">Address</th>
+									<th class="cell100 column4">Mobile No</th>
+									<th class="cell100 column5">Age</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+					{% for ps in  pss %}
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+								<tr class="row100 body">
+									<a href="">
+									<td class="cell100 column1">{{ps.name}}</td>
+									<td class="cell100 column2">{{ps.blood_group}}</td>
+									<td class="cell100 column3">{{ps.address}}</td>
+									<td class="cell100 column3">+91 {{ps.mobile_no}}</td>
+									<td class="cell100 column5">{{ps.age}}</td>
+								    </a>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					 {% endfor %}
+				</div>
+				<p>Go back to home page <a href="blood">home</a></p>
+			</div>
+		</div>
+	</div>
+
+
+<!--===============================================================================================-->	
+	<script src="{% static 'assets/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'assets/vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'assets/vendor/bootstrap/js/bootstrap.min.js' %} "></script>
+<!--===============================================================================================-->
+      <!-- Vendor JS Files -->
+      <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/wow/wow.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery-sticky/jquery.sticky.js' %}"></script>
+  <script src="{% static 'assets/vendor/superfish/superfish.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/hoverIntent/hoverIntent.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+</html>

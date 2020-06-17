@@ -1,0 +1,99 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Services Request</title>
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'assets/css/Allpage.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/addservices.css' %}">
+     <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+        
+
+</head>
+<body>
+
+
+    <!-- Submit Ad -->
+	<div class="submit-ad main-grid-border">
+		<div class="container mt-5">
+			<h1  >Request Service Add</h1>
+			<div class="post-ad-form">
+
+                  <form action="adds" method="post">
+					{% csrf_token %}
+					<label>Select Category <span>*</span></label>
+					<select class="" name="cat">
+					  <option>Select Category</option>
+					  <option>Plumbers</option>
+					  <option>Electricians</option>
+					  <option>Doctors</option>
+					  <option>Hotels</option>
+					  <option>Automobile</option>
+					  <option>Hospitals</option>
+					  <option>Resturants</option>
+					  
+					</select>
+					<div class="clearfix"></div>
+
+					<label>Name:<span>*</span></label>
+					<input type="text" class="phone" name="fn" placeholder="Name of workshop , clinic,shop etc" required="required">
+					<div class="clearfix"></div>
+
+					<label>Speciality:<span>*</span></label>
+					<input type="text" class="phone" name="sp" placeholder="Qualifications:  " required="required">
+					<div class="clearfix"></div>
+
+					<label>Department:<span>*</span></label>
+					<input type="text" class="phone"  name="dp" placeholder="ex:Plumbers,Electricians,eye Doctor etc" required="required">
+					<div class="clearfix"></div>
+
+					<label>Address:<span>*</span></label>
+					<input type="text" class="phone" name="ad" placeholder="Address " required="required">
+                    <div class="clearfix"></div>
+                    
+					<label>Service Description: <span>*</span></label>
+					<textarea class="mess" name="des" placeholder="Write few lines about your Service" required="required"></textarea>
+                    <div class="clearfix"></div>
+
+                   
+				<div class="upload-ad-photos">
+				<label>Photos for your ad :</label>	
+					<div class="photos-upload-view">
+						<input type="file" name="img" class="form-control-file" id="exampleFormControlFile1" required="required">
+					</div>
+					    <div class="clearfix"></div>
+				</div>
+					<div class="personal-details">
+
+<!--						<label>Your Name <span>*</span></label>-->
+<!--						<input type="text" class=""  name="n " placeholder="Full Name" required="required">-->
+<!--						<div class="clearfix"></div>-->
+
+<!--						<label>Your Mobile No <span>*</span></label>-->
+<!--						<input type="text" class="phone" name="mb" placeholder="Mobile no" required="required">-->
+<!--						<div class="clearfix"></div>-->
+
+						<p class="post-terms">By clicking <strong>Request Button</strong> you accept our <a href="" target="_blank">Terms of Use </a> and <a href="" target="_blank">Privacy Policy</a></p>
+					    <button class="btn btn-success float-right" type="submit" value="Post"> Request</button>	
+					    <div class="clearfix"></div>
+
+					</div>
+               </form>
+			</div>
+		</div>	
+	</div>
+
+
+	<!-- // Submit Ad -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

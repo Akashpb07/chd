@@ -1,0 +1,63 @@
+    
+    
+  #listview{
+    width: 100%;
+    position: relative;
+    z-index: 1;    
+}  
+.mlistview{
+    float: left;
+    background: #f4f4f4;
+}
+.list-group .mm-listview{
+    width: 63%;
+    text-align: center;
+    margin: 35px auto;
+    background: #fff;
+    border-radius: 6px;
+    display: table;
+    float: none;
+    padding: 20px 0;
+}
+
+.list-group .mm-listview li{
+    width: 90%;
+    margin: 0 5%;
+    display: block;
+    float: left;
+    border-bottom: 1px solid #efeff0;
+
+}   
+
+.mm-listview a{
+
+    float: left;
+    width: 100%;
+    background: transparent !important;
+    padding: 12px 10px;
+}
+.filImg {
+    width: 50px;
+    float: left;
+    text-align: center;
+}
+.service_title{
+
+    color: #414e5a;
+    float: left;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 6px 10px;
+    text-align: left;
+}
+
+.mediarw{
+
+    background-position: -656px -17px;
+    width: 11px;
+    height: 20px;
+    float: right;
+    margin: 2px 0;
+    position: relative;
+    top: 6px;
+}

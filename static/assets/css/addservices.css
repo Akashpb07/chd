@@ -1,0 +1,177 @@
+
+h1.addtitle {
+    color: #3F51B5;
+    font-family: sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+.post-ad-form {
+    border: 1px solid #eee;
+    padding: 40px;
+    margin-bottom: 60px;
+}
+.post-ad-form form label {
+    font
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+    color:#3F51B5;
+    margin-top: 10px;
+    display: BLOCK;
+    font-weight: 500;
+    float: left;
+    width: 16%;
+    text-align: right;
+    margin-right: 4%;
+}
+.post-ad-form form label span {
+	color:red;
+}
+.post-ad-form input[type="text"] {
+font-weight: 500;
+    padding: 10px 10px 10px 10px;
+    width: 70%;
+    margin-bottom: 25px;
+    border: 1px solid #aeaeae;
+    outline: none;
+    color: #555;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+	float: left;
+}
+.post-ad-form textarea {
+    height: 180px;
+    outline: none;
+    resize: none;
+	padding: 10px 10px 10px 10px;
+    width: 70%;
+    margin-bottom: 25px;
+    border: 1px solid #aeaeae;
+    outline: none;
+    color: #555;
+}
+.post-ad-form input[type="text"]:hover,.post-ad-form textarea:hover {
+    border: 1px solid #0127c0;
+    transition:0.5s all;
+	-webkit-transition:0.5s all;
+	-moz-transition:0.5s all;
+	-o-transition:0.5s all;
+	-ms-transition:0.5s all;
+}
+.post-ad-form form select {
+    border: 1px solid #aeaeae;
+    background-color: #fff;
+    padding: 8px;
+    width: 30%;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+.post-ad-form input[type="submit"] {
+    background: #f3c500;
+    color: white;
+    -webkit-appearance: none;
+    border: none;
+    text-transform: uppercase;
+    position: relative;
+    padding: 10px 50px;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    font-weight: 300;
+    -webkit-transition: all 333ms ease-in-out;
+    -moz-transition: all 333ms ease-in-out;
+    -o-transition: all 333ms ease-in-out;
+    -ms-transition: all 333ms ease-in-out;
+    transition: all 333ms ease-in-out;
+    margin-top: 20px;
+	float: right;
+}
+
+legend
+{
+	font-weight: bold;
+	color: #333;
+}
+
+
+
+
+img
+{
+	max-width: 100%;
+}
+
+pre
+{
+	width: 95%;
+	height: 8em;
+	font-family: monospace;
+	font-size: 0.9em;
+	padding: 1px 2px;
+	margin: 0 0 1em auto;
+	border: 1px inset #666;
+	background-color: #eee;
+	overflow: auto;
+}
+
+
+
+#progress p
+{
+	display: block;
+	width: 240px;
+	padding: 2px 5px;
+	margin: 2px 0;
+	border: 1px inset #446;
+	border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+	background: #eee url("progress.png") 100% 0 repeat-y;
+}
+
+#progress p.success
+{
+	background: #0c0 none 0 0 no-repeat;
+}
+
+#progress p.failed
+{
+	background: #c00 none 0 0 no-repeat;
+}
+.photos-upload-view{
+	float:left;
+	width: 70%;
+	margin-top: 10px;
+}
+.upload-ad-photos {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    margin: 20px 0;
+}
+.personal-details label {
+    font-size: 15px;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+    color: #000;
+    margin-top: 10px;
+    display: BLOCK;
+    font-weight: 400;
+    float: left;
+    width: 16%;
+    text-align: right;
+    margin-right: 4%;
+}
+p.post-terms {
+    margin-left: 20%;
+    color: #000;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+p.post-terms a {
+    color: #01A185;
+}

@@ -1,0 +1,62 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>login</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="">
+	
+	<!-- //Meta tag Keywords -->
+	<!--/Style-CSS -->
+	<link rel="stylesheet" href="{% static 'assets/css/accounts.css' %}" type="text/css" media="all" />
+	<!--//Style-CSS -->
+</head>
+
+<body>
+	<!-- /login-section -->
+
+	<section class="w3l-forms-23">
+		<div class="forms23-block-hny">
+			<div class="wrapper">
+				<h1>Login </h1>
+				<!-- if logo is image enable this   
+					<a class="logo" href="index.html">
+					  <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+					</a> 
+				-->
+				<div class="d-grid forms23-grids">
+					<div class="form23">
+						<div class="main-bg">
+							
+							<div class="speci-login first-look">
+								<img src="{% static 'assets/img/user.png' %}" alt="" class="img-responsive">
+							</div>
+						</div>
+						<div class="bottom-content">
+							<form action="login" method="post">
+								{% csrf_token %}
+								<input type="username" name="username" class="input-form" placeholder="Your Email" required="required" />
+								<input type="password" name="password" class="input-form" placeholder="Your Password" required="required" />
+								{% for message in messages %}
+									<h5 style="color:red"> {{message}}  </h5>
+									{% endfor %}
+								<p><a href="{% url 'password_reset' %}">Forgot Password?</a></p>
+								<button type="submit" class="loginhny-btn btn">Login</button>
+							</form>
+							<p>Not a member yet? <a href="register">Sign Up!</a></p>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<!-- //login-section -->
+</body>
+
+</html>
